@@ -1,0 +1,621 @@
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+type Language = 'tr' | 'en' | 'az';
+
+interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (key: string) => string;
+}
+
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
+const translations = {
+  tr: {
+    // Header
+    'header.services': 'Hizmetlerimiz',
+    'header.help': 'Yardım',
+    'header.account': 'Hesabım',
+    'header.login': 'Giriş Yap',
+    'header.register': 'Kayıt Ol',
+    'header.contact': 'İletişim',
+    'header.customerService': '7/24 Müşteri Hizmetleri',
+    'header.whatsapp': 'WhatsApp',
+    'header.instantSupport': 'Anında destek',
+    
+    // Hero
+    'hero.title': "Azerbaycan'ın Seyahat Sitesi",
+    'hero.flight': 'Uçak bileti',
+    'hero.hotel': 'Otel',
+    'hero.bus': 'Otobüs',
+    'hero.carRental': 'Araç kiralama',
+    'hero.transfer': 'Transfer',
+    'hero.oneWay': 'Tek yön',
+    'hero.roundTrip': 'Gidiş-dönüş',
+    'hero.multiCity': 'Çoklu uçuş',
+    'hero.nonStop': 'Aktarmasız',
+    'hero.from': 'Nereden',
+    'hero.to': 'Nereye',
+    'hero.departDate': 'Gidiş Tarihi',
+    'hero.addReturn': 'Dönüş Ekle',
+    'hero.passengers': 'Yolcu',
+    'hero.passenger': 'Yolcu',
+    'hero.economy': 'Ekonomi',
+    'hero.findCheapTicket': 'Ucuz bilet bul',
+    'hero.listHotels': 'Bu tarihler için otelleri de listele',
+    
+    // Date Picker
+    'datePicker.title': 'Giriş ve Çıkış Tarihi',
+    'datePicker.checkIn': 'Giriş Tarihi',
+    'datePicker.checkOut': 'Çıkış Tarihi',
+    'datePicker.guests': 'Konuk Sayısı',
+    'datePicker.adults': 'Yetişkin',
+    'datePicker.room': 'Oda',
+    'datePicker.calendarSearch': 'Takvimde Ara',
+    'datePicker.holidays': 'Resmi Tatiller',
+    'datePicker.apply': 'Uygula',
+    'datePicker.holidaysComingSoon': 'Resmi tatil günleri yakında eklenecek...',
+    
+    // Days
+    'day.mon': 'Pts',
+    'day.tue': 'Sal',
+    'day.wed': 'Çar',
+    'day.thu': 'Per',
+    'day.fri': 'Cum',
+    'day.sat': 'Cts',
+    'day.sun': 'Paz',
+    
+    // Months
+    'month.january': 'Ocak',
+    'month.february': 'Şubat',
+    'month.march': 'Mart',
+    'month.april': 'Nisan',
+    'month.may': 'Mayıs',
+    'month.june': 'Haziran',
+    'month.july': 'Temmuz',
+    'month.august': 'Ağustos',
+    'month.september': 'Eylül',
+    'month.october': 'Ekim',
+    'month.november': 'Kasım',
+    'month.december': 'Aralık',
+    
+    // Flight Deals
+    'deals.title': 'Fırsat uçuşları',
+    'deals.newYear': 'Yılbaşı Fırsatları',
+    'deals.international': 'Yurt dışı',
+    'deals.domestic': 'Yurt içi',
+    'deals.viewAll': 'Tümünü gör',
+    
+    // Popular Destinations
+    'destinations.title': 'Popüler Destinasyonlar',
+    'destinations.exploreAll': 'Tümünü Keşfet',
+    'destinations.from': 'başlayan fiyatlarla',
+    
+    // Featured Hotels
+    'hotels.title': 'Öne Çıkan Oteller',
+    'hotels.viewAll': 'Tüm Otelleri Gör',
+    'hotels.night': 'gece',
+    'hotels.from': 'dan başlayan fiyatlarla',
+    'hotels.rating': 'Değerlendirme',
+    'hotels.reviews': 'yorum',
+    'hotels.bookNow': 'Hemen Rezervasyon Yap',
+    'hotels.mostPopular': 'En Popüler',
+    'hotels.new': 'Yeni',
+    'hotels.discount': 'İndirim',
+    'hotels.wifi': 'Wifi',
+    'hotels.parking': 'Otopark',
+    'hotels.restaurant': 'Restoran',
+    'hotels.pool': 'Havuz',
+    'hotels.perNight': 'gecelik',
+    
+    // Hotel Descriptions
+    'hotels.maxxRoyalDesc': 'Lüks golf resort ile unutulmaz bir tatil deneyimi',
+    'hotels.titanicDesc': 'Muhteşem saray mimarisi ve lüks hizmet',
+    'hotels.voyageDesc': 'Golf ve spa ile mükemmel bir kombinasyon',
+    'hotels.delphinDesc': 'Aile dostu ultra her şey dahil resort',
+    
+    // Campaigns
+    'campaigns.title': 'Özel Kampanyalar',
+    'campaigns.subtitle': 'Sınırlı süreli özel tekliflerden yararlanın ve hayalinizdeki tatili uygun fiyatlarla yakalayın',
+    'campaigns.viewAll': 'Tümünü Gör',
+    'campaigns.upTo': "e varan",
+    'campaigns.discount': 'indirim',
+    'campaigns.details': 'Detayları Gör',
+    'campaigns.explore': 'Keşfet',
+    'campaigns.until': 'tarihine kadar',
+    'campaigns.summer': 'Yazın Son Fırsatları',
+    'campaigns.summerDesc': '%40 indirimle tatil keyfi',
+    'campaigns.earlyBird': 'Erken Rezervasyon',
+    'campaigns.earlyBirdDesc': '2026 yazı için özel fiyatlar',
+    'campaigns.romantic': 'Çiftler İçin Romantik',
+    'campaigns.romanticDesc': 'Balayı paketlerinde büyük indirim',
+    'campaigns.limitedTime': 'Sınırlı Süre',
+    'campaigns.specialPrice': 'Özel Fiyat',
+    'campaigns.romanticBadge': 'Romantik',
+    'campaigns.notifications': 'Özel Kampanya Bildirimleri',
+    'campaigns.notificationsDesc': 'Yeni fırsatlardan ilk sen haberdar ol',
+    'campaigns.subscribe': 'Abone Ol',
+    'campaigns.august31': '31 Ağustos',
+    'campaigns.september15': '15 Eylül',
+    'campaigns.september10': '10 Eylül',
+    
+    // Early Booking
+    'earlyBooking.title': 'Erken Rezervasyon Fırsatları',
+    'earlyBooking.saveUpTo': "e varan tasarruf",
+    'earlyBooking.bookNow': 'Hemen Rezerve Et',
+    
+    // Blog
+    'blog.title': 'Blog',
+    'blog.readMore': 'Devamını Oku',
+    'blog.allArticles': 'Tüm Yazılar',
+    
+    // Reviews
+    'reviews.title': 'Müşteri Yorumları',
+    'reviews.whatTheySay': 'Müşterilerimiz Ne Diyor',
+    'reviews.weeksAgo': 'hafta önce',
+    
+    // Footer
+    'footer.about': 'Hakkımızda',
+    'footer.aboutUs': 'Hakkımızda',
+    'footer.careers': 'Kariyer',
+    'footer.press': 'Basın',
+    'footer.blog': 'Blog',
+    'footer.support': 'Destek',
+    'footer.helpCenter': 'Yardım Merkezi',
+    'footer.termsOfService': 'Hizmet Şartları',
+    'footer.privacy': 'Gizlilik',
+    'footer.legal': 'Yasal',
+    'footer.contact': 'İletişim',
+    'footer.contactUs': 'Bize Ulaşın',
+    'footer.partnerships': 'İş Ortaklıkları',
+    'footer.affiliates': 'Bağlı Kuruluşlar',
+    'footer.description': 'Azerbaycan\'ın en güvenilir seyahat platformu. Uçak bileti, otel rezervasyonu ve daha fazlası için tek adres.',
+    'footer.allRightsReserved': 'Tüm hakları saklıdır.',
+    'footer.followUs': 'Bizi Takip Edin',
+    'footer.newsletter': 'Özel Fırsatlardan Haberdar Olun',
+    'footer.newsletterDesc': 'En iyi tatil fırsatları ve kampanyaları e-posta kutunuza gelsin',
+    'footer.emailPlaceholder': 'E-posta adresinizi girin',
+    
+    // Services Page
+    'services.title': 'Hizmetlerimiz',
+    'services.subtitle': 'Size En İyi Seyahat Deneyimini Sunuyoruz',
+    'services.flightTickets': 'Uçak Biletleri',
+    'services.flightDesc': 'Dünya çapında 500+ havayolu şirketinden en uygun fiyatlarla uçak bileti.',
+    'services.hotelReservations': 'Otel Rezervasyonları',
+    'services.hotelDesc': 'Milyonlarca otel arasından size uygun olanı bulun ve rezerve edin.',
+    'services.carRental': 'Araç Kiralama',
+    'services.carDesc': 'Güvenilir araç kiralama hizmetiyle özgürce gezin.',
+    'services.tours': 'Turlar',
+    'services.toursDesc': 'Rehberli turlarla unutulmaz deneyimler yaşayın.',
+    'services.insurance': 'Seyahat Sigortası',
+    'services.insuranceDesc': 'Güvenli seyahat için kapsamlı sigorta seçenekleri.',
+    'services.visaSupport': 'Vize Desteği',
+    'services.visaDesc': 'Vize başvuru süreçlerinizde profesyonel destek.',
+    'services.whyChooseUs': 'Neden Bizi Seçmelisiniz?',
+    'services.bestPrices': 'En İyi Fiyatlar',
+    'services.bestPricesDesc': 'Piyasadaki en uygun fiyat garantisi.',
+    'services.support247': '7/24 Destek',
+    'services.support247Desc': 'Her zaman yanınızdayız.',
+    'services.securePayment': 'Güvenli Ödeme',
+    'services.securePaymentDesc': 'SSL sertifikalı güvenli ödeme sistemi.',
+    'services.easyBooking': 'Kolay Rezervasyon',
+    'services.easyBookingDesc': 'Sadece birkaç tıkla rezervasyonunuzu tamamlayın.',
+    'services.ourServices': 'Kapsamlı Hizmet Yelpazemiz',
+    'services.whyUs': 'Neden TourAgent?',
+  },
+  
+  en: {
+    // Header
+    'header.services': 'Services',
+    'header.help': 'Help',
+    'header.account': 'My Account',
+    'header.login': 'Login',
+    'header.register': 'Sign Up',
+    'header.contact': 'Contact',
+    'header.customerService': '24/7 Customer Service',
+    'header.whatsapp': 'WhatsApp',
+    'header.instantSupport': 'Instant support',
+    
+    // Hero
+    'hero.title': "Azerbaijan's Travel Site",
+    'hero.flight': 'Flight ticket',
+    'hero.hotel': 'Hotel',
+    'hero.bus': 'Bus',
+    'hero.carRental': 'Car rental',
+    'hero.transfer': 'Transfer',
+    'hero.oneWay': 'One way',
+    'hero.roundTrip': 'Round trip',
+    'hero.multiCity': 'Multi-city',
+    'hero.nonStop': 'Non-stop',
+    'hero.from': 'From',
+    'hero.to': 'To',
+    'hero.departDate': 'Departure Date',
+    'hero.addReturn': 'Add Return',
+    'hero.passengers': 'Passengers',
+    'hero.passenger': 'Passenger',
+    'hero.economy': 'Economy',
+    'hero.findCheapTicket': 'Find cheap ticket',
+    'hero.listHotels': 'Also list hotels for these dates',
+    
+    // Date Picker
+    'datePicker.title': 'Check-in and Check-out Date',
+    'datePicker.checkIn': 'Check-in Date',
+    'datePicker.checkOut': 'Check-out Date',
+    'datePicker.guests': 'Number of Guests',
+    'datePicker.adults': 'Adults',
+    'datePicker.room': 'Room',
+    'datePicker.calendarSearch': 'Search Calendar',
+    'datePicker.holidays': 'Public Holidays',
+    'datePicker.apply': 'Apply',
+    'datePicker.holidaysComingSoon': 'Public holidays coming soon...',
+    
+    // Days
+    'day.mon': 'Mon',
+    'day.tue': 'Tue',
+    'day.wed': 'Wed',
+    'day.thu': 'Thu',
+    'day.fri': 'Fri',
+    'day.sat': 'Sat',
+    'day.sun': 'Sun',
+    
+    // Months
+    'month.january': 'January',
+    'month.february': 'February',
+    'month.march': 'March',
+    'month.april': 'April',
+    'month.may': 'May',
+    'month.june': 'June',
+    'month.july': 'July',
+    'month.august': 'August',
+    'month.september': 'September',
+    'month.october': 'October',
+    'month.november': 'November',
+    'month.december': 'December',
+    
+    // Flight Deals
+    'deals.title': 'Flight deals',
+    'deals.newYear': 'New Year Deals',
+    'deals.international': 'International',
+    'deals.domestic': 'Domestic',
+    'deals.viewAll': 'View all',
+    
+    // Popular Destinations
+    'destinations.title': 'Popular Destinations',
+    'destinations.exploreAll': 'Explore All',
+    'destinations.from': 'starting from',
+    
+    // Featured Hotels
+    'hotels.title': 'Featured Hotels',
+    'hotels.viewAll': 'View All Hotels',
+    'hotels.night': 'night',
+    'hotels.from': 'starting from',
+    'hotels.rating': 'Rating',
+    'hotels.reviews': 'reviews',
+    'hotels.bookNow': 'Book Now',
+    'hotels.mostPopular': 'Most Popular',
+    'hotels.new': 'New',
+    'hotels.discount': 'Discount',
+    'hotels.wifi': 'Wifi',
+    'hotels.parking': 'Parking',
+    'hotels.restaurant': 'Restaurant',
+    'hotels.pool': 'Pool',
+    'hotels.perNight': 'per night',
+    
+    // Hotel Descriptions
+    'hotels.maxxRoyalDesc': 'Unforgettable vacation with luxury golf resort',
+    'hotels.titanicDesc': 'Magnificent palace architecture and luxury service',
+    'hotels.voyageDesc': 'Perfect combination of golf and spa',
+    'hotels.delphinDesc': 'Family-friendly ultra all-inclusive resort',
+    
+    // Campaigns
+    'campaigns.title': 'Special Campaigns',
+    'campaigns.subtitle': 'Take advantage of limited-time special offers and catch your dream vacation at affordable prices',
+    'campaigns.viewAll': 'View All',
+    'campaigns.upTo': 'up to',
+    'campaigns.discount': 'discount',
+    'campaigns.details': 'View Details',
+    'campaigns.explore': 'Explore',
+    'campaigns.until': 'until',
+    'campaigns.summer': 'Last Summer Deals',
+    'campaigns.summerDesc': 'Vacation fun with 40% discount',
+    'campaigns.earlyBird': 'Early Booking',
+    'campaigns.earlyBirdDesc': 'Special prices for summer 2026',
+    'campaigns.romantic': 'Romantic for Couples',
+    'campaigns.romanticDesc': 'Big discount on honeymoon packages',
+    'campaigns.limitedTime': 'Limited Time',
+    'campaigns.specialPrice': 'Special Price',
+    'campaigns.romanticBadge': 'Romantic',
+    'campaigns.notifications': 'Campaign Notifications',
+    'campaigns.notificationsDesc': 'Be the first to know about new deals',
+    'campaigns.subscribe': 'Subscribe',
+    'campaigns.august31': 'August 31',
+    'campaigns.september15': 'September 15',
+    'campaigns.september10': 'September 10',
+    
+    // Early Booking
+    'earlyBooking.title': 'Early Booking Deals',
+    'earlyBooking.saveUpTo': 'save up to',
+    'earlyBooking.bookNow': 'Book Now',
+    
+    // Blog
+    'blog.title': 'Blog',
+    'blog.readMore': 'Read More',
+    'blog.allArticles': 'All Articles',
+    
+    // Reviews
+    'reviews.title': 'Customer Reviews',
+    'reviews.whatTheySay': 'What Our Customers Say',
+    'reviews.weeksAgo': 'weeks ago',
+    
+    // Footer
+    'footer.about': 'About',
+    'footer.aboutUs': 'About Us',
+    'footer.careers': 'Careers',
+    'footer.press': 'Press',
+    'footer.blog': 'Blog',
+    'footer.support': 'Support',
+    'footer.helpCenter': 'Help Center',
+    'footer.termsOfService': 'Terms of Service',
+    'footer.privacy': 'Privacy',
+    'footer.legal': 'Legal',
+    'footer.contact': 'Contact',
+    'footer.contactUs': 'Contact Us',
+    'footer.partnerships': 'Partnerships',
+    'footer.affiliates': 'Affiliates',
+    'footer.description': 'Turkey\'s most trusted travel platform. Your one-stop destination for flight tickets, hotel reservations, and more.',
+    'footer.allRightsReserved': 'All rights reserved.',
+    'footer.followUs': 'Follow Us',
+    'footer.newsletter': 'Get Special Offers',
+    'footer.newsletterDesc': 'Receive the best holiday deals and campaigns in your inbox',
+    'footer.emailPlaceholder': 'Enter your email address',
+    
+    // Services Page
+    'services.title': 'Our Services',
+    'services.subtitle': 'We Provide You The Best Travel Experience',
+    'services.flightTickets': 'Flight Tickets',
+    'services.flightDesc': 'Flight tickets at the best prices from 500+ airlines worldwide.',
+    'services.hotelReservations': 'Hotel Reservations',
+    'services.hotelDesc': 'Find and book the perfect hotel from millions of options.',
+    'services.carRental': 'Car Rental',
+    'services.carDesc': 'Explore freely with reliable car rental service.',
+    'services.tours': 'Tours',
+    'services.toursDesc': 'Experience unforgettable moments with guided tours.',
+    'services.insurance': 'Travel Insurance',
+    'services.insuranceDesc': 'Comprehensive insurance options for safe travel.',
+    'services.visaSupport': 'Visa Support',
+    'services.visaDesc': 'Professional support for your visa applications.',
+    'services.whyChooseUs': 'Why Choose Us?',
+    'services.bestPrices': 'Best Prices',
+    'services.bestPricesDesc': 'Best price guarantee in the market.',
+    'services.support247': '24/7 Support',
+    'services.support247Desc': 'We are always here for you.',
+    'services.securePayment': 'Secure Payment',
+    'services.securePaymentDesc': 'SSL certified secure payment system.',
+    'services.easyBooking': 'Easy Booking',
+    'services.easyBookingDesc': 'Complete your booking with just a few clicks.',
+    'services.ourServices': 'Our Comprehensive Services',
+    'services.whyUs': 'Why TourAgent?',
+  },
+  
+  az: {
+    // Header
+    'header.services': 'Xidmətlər',
+    'header.help': 'Kömək',
+    'header.account': 'Hesabım',
+    'header.login': 'Daxil ol',
+    'header.register': 'Qeydiyyat',
+    'header.contact': 'Əlaqə',
+    'header.customerService': '7/24 Müştəri Xidmətləri',
+    'header.whatsapp': 'WhatsApp',
+    'header.instantSupport': 'Ani dəstək',
+    
+    // Hero
+    'hero.title': 'Azərbaycanın Səyahət Saytı',
+    'hero.flight': 'Təyyarə bileti',
+    'hero.hotel': 'Otel',
+    'hero.bus': 'Avtobus',
+    'hero.carRental': 'Maşın icarəsi',
+    'hero.transfer': 'Transfer',
+    'hero.oneWay': 'Tək istiqamət',
+    'hero.roundTrip': 'Getmə-gəlmə',
+    'hero.multiCity': 'Çoxlu uçuş',
+    'hero.nonStop': 'Dayanacaqsız',
+    'hero.from': 'Haradan',
+    'hero.to': 'Hara',
+    'hero.departDate': 'Getmə Tarixi',
+    'hero.addReturn': 'Qayıdış əlavə et',
+    'hero.passengers': 'Sərnişin',
+    'hero.passenger': 'Sərnişin',
+    'hero.economy': 'Ekonom',
+    'hero.findCheapTicket': 'Ucuz bilet tap',
+    'hero.listHotels': 'Bu tarixlər üçün otelləri də siyahıya sal',
+    
+    // Date Picker
+    'datePicker.title': 'Giriş və Çıxış Tarixi',
+    'datePicker.checkIn': 'Giriş Tarixi',
+    'datePicker.checkOut': 'Çıxış Tarixi',
+    'datePicker.guests': 'Qonaq Sayı',
+    'datePicker.adults': 'Böyük',
+    'datePicker.room': 'Otaq',
+    'datePicker.calendarSearch': 'Təqvimdə Axtar',
+    'datePicker.holidays': 'Rəsmi Bayramlar',
+    'datePicker.apply': 'Tətbiq et',
+    'datePicker.holidaysComingSoon': 'Rəsmi bayram günləri tezliklə əlavə olunacaq...',
+    
+    // Days
+    'day.mon': 'Bz',
+    'day.tue': 'Çax',
+    'day.wed': 'Çər',
+    'day.thu': 'Ca',
+    'day.fri': 'Cü',
+    'day.sat': 'Şə',
+    'day.sun': 'Ba',
+    
+    // Months
+    'month.january': 'Yanvar',
+    'month.february': 'Fevral',
+    'month.march': 'Mart',
+    'month.april': 'Aprel',
+    'month.may': 'May',
+    'month.june': 'İyun',
+    'month.july': 'İyul',
+    'month.august': 'Avqust',
+    'month.september': 'Sentyabr',
+    'month.october': 'Oktyabr',
+    'month.november': 'Noyabr',
+    'month.december': 'Dekabr',
+    
+    // Flight Deals
+    'deals.title': 'Endirimlə uçuşlar',
+    'deals.newYear': 'Yeni İl Endirmləri',
+    'deals.international': 'Beynəlxalq',
+    'deals.domestic': 'Daxili',
+    'deals.viewAll': 'Hamısını gör',
+    
+    // Popular Destinations
+    'destinations.title': 'Populyar İstiqamətlər',
+    'destinations.exploreAll': 'Hamısını Kəşf Et',
+    'destinations.from': 'dan başlayan qiymətlərlə',
+    
+    // Featured Hotels
+    'hotels.title': 'Seçilmiş Otellər',
+    'hotels.viewAll': 'Bütün Otelləri Gör',
+    'hotels.night': 'gecə',
+    'hotels.from': 'dan başlayan qiymətlərlə',
+    'hotels.rating': 'Reytinq',
+    'hotels.reviews': 'rəy',
+    'hotels.bookNow': 'İndi Rezervasiya Et',
+    'hotels.mostPopular': 'Ən Populyar',
+    'hotels.new': 'Yeni',
+    'hotels.discount': 'Endirim',
+    'hotels.wifi': 'Wifi',
+    'hotels.parking': 'Parkinq',
+    'hotels.restaurant': 'Restoran',
+    'hotels.pool': 'Hovuz',
+    'hotels.perNight': 'gecəlik',
+    
+    // Hotel Descriptions
+    'hotels.maxxRoyalDesc': 'Lüks qolf resort ilə unudulmaz tətil təcrübəsi',
+    'hotels.titanicDesc': 'Möhtəşəm saray memarlığı və lüks xidmət',
+    'hotels.voyageDesc': 'Qolf və spa-nın mükəmməl birləşməsi',
+    'hotels.delphinDesc': 'Ailə dostu ultra hər şey daxil resort',
+    
+    // Campaigns
+    'campaigns.title': 'Xüsusi Kampaniyalar',
+    'campaigns.subtitle': 'Məhdud müddətli xüsusi təkliflərdən yararlanın və xəyal etdiyiniz tətili sərfəli qiymətlərlə tutun',
+    'campaigns.viewAll': 'Hamısını Gör',
+    'campaigns.upTo': 'ə qədər',
+    'campaigns.discount': 'endirim',
+    'campaigns.details': 'Ətraflı Məlumat',
+    'campaigns.explore': 'Kəşf Et',
+    'campaigns.until': 'tarixinə qədər',
+    'campaigns.summer': 'Yayın Son Fürsətləri',
+    'campaigns.summerDesc': '%40 endirimlə tətil keyfi',
+    'campaigns.earlyBird': 'Erkən Rezervasiya',
+    'campaigns.earlyBirdDesc': '2026 yayı üçün xüsusi qiymətlər',
+    'campaigns.romantic': 'Cütlər Üçün Romantik',
+    'campaigns.romanticDesc': 'Balayı paketlərində böyük endirim',
+    'campaigns.limitedTime': 'Məhdud Müddət',
+    'campaigns.specialPrice': 'Xüsusi Qiymət',
+    'campaigns.romanticBadge': 'Romantik',
+    'campaigns.notifications': 'Xüsusi Kampaniya Bildirişləri',
+    'campaigns.notificationsDesc': 'Yeni fürsətlərdən ilk sən xəbərdar ol',
+    'campaigns.subscribe': 'Abunə Ol',
+    'campaigns.august31': '31 Avqust',
+    'campaigns.september15': '15 Sentyabr',
+    'campaigns.september10': '10 Sentyabr',
+    
+    // Early Booking
+    'earlyBooking.title': 'Erkən Rezervasiya Fürsətləri',
+    'earlyBooking.saveUpTo': 'ə qədər qənaət',
+    'earlyBooking.bookNow': 'İndi Rezerv Et',
+    
+    // Blog
+    'blog.title': 'Bloq',
+    'blog.readMore': 'Daha Çox Oxu',
+    'blog.allArticles': 'Bütün Məqalələr',
+    
+    // Reviews
+    'reviews.title': 'Müştəri Rəyləri',
+    'reviews.whatTheySay': 'Müştərilərimiz Nə Deyir',
+    'reviews.weeksAgo': 'həftə əvvəl',
+    
+    // Footer
+    'footer.about': 'Haqqımızda',
+    'footer.aboutUs': 'Haqqımızda',
+    'footer.careers': 'Karyera',
+    'footer.press': 'Mətbuat',
+    'footer.blog': 'Bloq',
+    'footer.support': 'Dəstək',
+    'footer.helpCenter': 'Yardım Mərkəzi',
+    'footer.termsOfService': 'Xidmət Şərtləri',
+    'footer.privacy': 'Məxfilik',
+    'footer.legal': 'Hüquqi',
+    'footer.contact': 'Əlaqə',
+    'footer.contactUs': 'Bizimlə Əlaqə',
+    'footer.partnerships': 'İş Ortaqlıqları',
+    'footer.affiliates': 'Tərəfdaşlar',
+    'footer.description': 'Türkiyənin ən etibarlı səyahət platforması. Təyyarə bileti, otel rezervasiyası və daha çoxu üçün tək ünvan.',
+    'footer.allRightsReserved': 'Bütün hüquqlar qorunur.',
+    'footer.followUs': 'Bizi İzləyin',
+    'footer.newsletter': 'Xüsusi Təkliflərdən Xəbərdar Olun',
+    'footer.newsletterDesc': 'Ən yaxşı tətil təklifləri və kampaniyaları e-poçt qutunuza gəlsin',
+    'footer.emailPlaceholder': 'E-poçt ünvanınızı daxil edin',
+    
+    // Services Page
+    'services.title': 'Xidmətlərimiz',
+    'services.subtitle': 'Sizə Ən Yaxşı Səyahət Təcrübəsini Təqdim Edirik',
+    'services.flightTickets': 'Təyyarə Biletləri',
+    'services.flightDesc': 'Dünya miqyasında 500+ aviaşirkətdən ən münasib qiymətlərlə təyyarə bileti.',
+    'services.hotelReservations': 'Otel Rezervasiyaları',
+    'services.hotelDesc': 'Milyonlarla otel arasından sizə uyğun olanı tapın və rezerv edin.',
+    'services.carRental': 'Maşın İcarəsi',
+    'services.carDesc': 'Etibarlı maşın icarəsi xidməti ilə azad şəkildə səyahət edin.',
+    'services.tours': 'Turlar',
+    'services.toursDesc': 'Bələdçili turlarla unudulmaz təcrübələr yaşayın.',
+    'services.insurance': 'Səyahət Sığortası',
+    'services.insuranceDesc': 'Təhlükəsiz səyahət üçün əhatəli sığorta seçimləri.',
+    'services.visaSupport': 'Viza Dəstəyi',
+    'services.visaDesc': 'Viza müraciət proseslərinizdə peşəkar dəstək.',
+    'services.whyChooseUs': 'Niyə Bizi Seçməlisiniz?',
+    'services.bestPrices': 'Ən Yaxşı Qiymətlər',
+    'services.bestPricesDesc': 'Bazarda ən münasib qiymət zəmanəti.',
+    'services.support247': '7/24 Dəstək',
+    'services.support247Desc': 'Həmişə yanınızdayıq.',
+    'services.securePayment': 'Təhlükəsiz Ödəniş',
+    'services.securePaymentDesc': 'SSL sertifikatlı təhlükəsiz ödəniş sistemi.',
+    'services.easyBooking': 'Asan Rezervasiya',
+    'services.easyBookingDesc': 'Sadəcə bir neçə kliklə rezervasiyanızı tamamlayın.',
+    'services.ourServices': 'Əhatəli Xidmət Çeşidimiz',
+    'services.whyUs': 'Niyə TourAgent?',
+  },
+};
+
+export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [language, setLanguage] = useState<Language>(() => {
+    const saved = localStorage.getItem('language');
+    return (saved as Language) || 'tr';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('language', language);
+  }, [language]);
+
+  const t = (key: string): string => {
+    return translations[language][key] || key;
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error('useLanguage must be used within LanguageProvider');
+  }
+  return context;
+};
