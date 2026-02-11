@@ -57,9 +57,12 @@
     "zod": "^3.24.4"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test"
+    "start": "vite --host 0.0.0.0 --port 3000",
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json"
   },
   "browserslist": {
     "production": [
