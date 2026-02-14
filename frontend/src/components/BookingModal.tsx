@@ -414,7 +414,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Popüler Aramalar:
+                  Populyar Axtarışlar:
                 </span>
               </div>
               <div className="flex flex-wrap gap-3">
@@ -437,7 +437,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
             <div className="mt-8">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                  {searchResults.length} otel bulundu
+                  {searchResults.length} otel tapıldı
                 </h3>
                 <button
                   onClick={() => {
@@ -449,7 +449,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
                   }}
                   className="text-blue-600 hover:text-blue-700 font-medium"
                 >
-                  Yeni Arama
+                  Yeni Axtarış
                 </button>
               </div>
 
