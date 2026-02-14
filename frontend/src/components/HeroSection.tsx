@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Play, Plane, Building, Bus, Car, MapPin, Calendar, Users, ChevronDown } from 'lucide-react';
+import { ArrowRight, Play, Plane, Building, Camera, MapPin, Calendar, Users, ChevronDown } from 'lucide-react';
 import BookingModal from './BookingModal';
 import DateRangePicker from './DateRangePicker';
 import { useLanguage } from '../contexts/LanguageContext';
