@@ -138,7 +138,7 @@ const Footer: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="md:flex md:items-center md:justify-between">
             <div className="text-gray-400 text-sm">
-              © 2026 TourAgent. Tüm hakları saklıdır. &nbsp;|&nbsp; VÖEN: 2007383881
+              © 2026 TourAgent. Bütün hüquqlar qorunur. &nbsp;|&nbsp; VÖEN: 2007383881
             </div>
             <div className="mt-4 md:mt-0 flex flex-wrap space-x-6 text-sm text-gray-400">
               <Link to="/policies" className="hover:text-orange-500 transition-colors duration-200">
