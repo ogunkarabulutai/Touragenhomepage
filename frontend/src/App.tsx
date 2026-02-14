@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import AuthModal from './components/AuthModal';
 import Services from './components/Services';
 import AboutUs from './components/AboutUs';
+import Policies from './components/Policies';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
