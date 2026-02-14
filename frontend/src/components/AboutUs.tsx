@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plane, Building, Car, MapPin, Shield, Clock, Heart, Sparkles, Users, Globe, Phone, CheckCircle } from 'lucide-react';
+import { Plane, Building, Car, MapPin, Shield, Clock, Heart, Sparkles, Users, Globe, Phone, CheckCircle, Mail, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const AboutUs: React.FC = () => {
