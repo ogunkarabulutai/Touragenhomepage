@@ -32,6 +32,12 @@ Azerbaycan merkezli bir seyahat sitesi. Kullanıcılar uçuş bileti arayabilir,
 ### v1.2 - Para Birimi Güncellemesi (Şubat 2026)
 - [x] Tüm fiyatlar TL yerine $ (USD) olarak güncellendi
 
+### v1.3 - Azerbaycanca Dil Desteği (Şubat 2026)
+- [x] Varsayılan dil Azerbaycanca (az) olarak ayarlandı
+- [x] Tüm UI metinleri Azerbaycancaya çevrildi
+- [x] Tarih formatları az-AZ locale ile güncellendi
+- [x] Header, Footer, Blog, Hotel bileşenleri çevrildi
+
 ## Bekleyen Özellikler
 
 ### P1 - Yüksek Öncelik
