@@ -144,6 +144,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({ icon, label, isOpen, onTo
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('flight');
