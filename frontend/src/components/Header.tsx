@@ -76,21 +76,21 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode, onOpenAuth })
               </button>
               
               {showHelp && (
-                <div className="absolute right-0 top-full mt-2 w-64 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 z-50">
+                <div className="absolute right-0 top-full mt-2 w-72 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-4 z-50">
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-3">{t('header.contact')}</h3>
                   <div className="space-y-3">
                     <a
-                      href="tel:444387"
+                      href="tel:+994124411262"
                       className="flex items-center space-x-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
                     >
                       <Phone className="w-5 h-5 text-blue-500" />
                       <div>
-                        <div className="font-medium text-gray-900 dark:text-white">444 0 387</div>
+                        <div className="font-medium text-gray-900 dark:text-white">+994 12 441 12 62</div>
                         <div className="text-sm text-gray-500 dark:text-gray-400">{t('header.customerService')}</div>
                       </div>
                     </a>
                     <a
-                      href="https://wa.me/905551234567"
+                      href="https://wa.me/994502424269"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
@@ -98,7 +98,17 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode, onOpenAuth })
                       <MessageCircle className="w-5 h-5 text-green-500" />
                       <div>
                         <div className="font-medium text-gray-900 dark:text-white">{t('header.whatsapp')}</div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400">{t('header.instantSupport')}</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400">+994 50 242 42 69</div>
+                      </div>
+                    </a>
+                    <a
+                      href="mailto:info@touragent.az"
+                      className="flex items-center space-x-3 p-2 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
+                    >
+                      <Mail className="w-5 h-5 text-orange-500" />
+                      <div>
+                        <div className="font-medium text-gray-900 dark:text-white">info@touragent.az</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-400">E-poçt</div>
                       </div>
                     </a>
                   </div>
