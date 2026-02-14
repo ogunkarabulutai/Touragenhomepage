@@ -1,50 +1,47 @@
 # TourAgent Customer Panel - PRD
 
 ## Original Problem Statement
-Kullanıcı "Touragent-Customer-Panel-main.zip" dosyasını birebir entegre etmek istedi. Sonrasında Azerbaycan dilinde "Haqqımızda" (Hakkımızda) sayfası eklenmesini istedi.
+Kullanıcı "Touragent-Customer-Panel-main.zip" dosyasını yükledi ve mevcut Emergent platformuna birebir entegre edilmesini istedi. Ardından ana sayfadaki arama bölümünden Otobüs, Araç Kiralama ve Transfer seçeneklerinin kaldırılıp sadece Uçak Bileti, Otel ve Tur seçeneklerinin bırakılmasını istedi.
 
 ## Architecture
-- **Frontend**: React 18 + TypeScript + Vite + Tailwind CSS
-- **Backend**: FastAPI (minimal, not used by this app)
-- **Database**: None (pure frontend app)
-- **Serving**: Vite build + serve (static files on port 3000)
-
-## Core Requirements (Static)
-- Tourism/travel booking website
-- Multi-language support (TR, EN, AZ)
-- Dark mode toggle
-- Responsive design
-- Sections: Header, Hero with booking form, Flight Deals, Popular Destinations, Featured Hotels, Campaigns, Early Booking, Blog, Reviews, Footer
-- Services page (/services)
-- About Us page (/about) - Azerbaijani content about TourAgent Travel
-- Auth modal (login/register UI)
+- **Frontend**: Vite + React + TypeScript (port 3000)
+- **Styling**: Tailwind CSS with dark mode support
+- **Routing**: React Router DOM v7
+- **i18n**: Custom LanguageContext (TR, EN, AZ)
+- **Backend**: FastAPI (minimal, not actively used)
+- **Database**: None (static frontend app)
 
 ## User Personas
-- Tourists looking for travel packages
-- Hotel/flight booking customers
-- Multi-language users (Turkish, English, Azerbaijani)
+- Travel customers looking to book flights, hotels, and tours
+- Multi-language support: Turkish, English, Azerbaijani
 
-## What's Been Implemented
-### 2026-02-11 - Initial Integration
-- Full project integration from uploaded zip file
-- Converted CRA to Vite + TypeScript setup
-- All 14 components integrated as-is
-- React Router with / and /services routes
+## Core Requirements
+- Travel booking search interface (Flight, Hotel, Tour tabs)
+- Popular destinations showcase
+- Featured hotels listing
+- Campaign/discount sections
+- Early booking offers
+- Blog section
+- Customer reviews
+- Auth modal (login/register)
+- Services page
+- Dark mode toggle
+- Multi-language support (TR/EN/AZ)
 
-### 2026-02-11 - About Us Page Added
-- Created AboutUs.tsx component with full Azerbaijani content
-- Added /about route in App.tsx
-- Added "Haqqımızda" navigation link in Header
-- Sections: Hero with stats, company description, 6 service cards (Aviabilet, Turpaketlər, Xarici Turpaketlər, Xüsusi Turlar, Transfer & VIP, Viza Dəstəyi), 7/24 support, CTA
-- All tests passed (iteration_2: 90% success)
+## What's Been Implemented (Jan 2026)
+- [x] Full project integration from uploaded zip file (Vite+React+TS)
+- [x] CRA to Vite migration for Emergent platform compatibility
+- [x] All 14 components integrated
+- [x] LanguageContext with 3 languages (TR/EN/AZ)
+- [x] Removed Bus, Car Rental, Transfer tabs from hero search
+- [x] Added Tour tab to hero search
+- [x] All tests passed (100%)
 
 ## Prioritized Backlog
-- P0: None (all core features working)
-- P1: Hot reload for development (currently needs rebuild)
-- P2: Language switch for About page content (currently AZ only)
-- P3: Dark mode visual refinements
+### P1
+- Connect search forms to actual booking APIs
+- User authentication backend
+- Database integration
 
-## Next Tasks
-- Add backend functionality if needed (booking API, user auth)
-- Multi-language support for About page
-- Connect to real hotel/flight data APIs
+### P2
+- Blog CMS, Payment integration, Real hotel data API
