@@ -135,7 +135,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode, onOpenAuth })
                     }}
                     className="w-full text-left px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200 text-gray-900 dark:text-white"
                   >
-                    Giriş Yap
+                    Daxil ol
                   </button>
                   <button
                     onClick={() => {
@@ -144,7 +144,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode, onOpenAuth })
                     }}
                     className="w-full text-left px-4 py-2 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200 text-gray-900 dark:text-white"
                   >
-                    Kayıt Ol
+                    Qeydiyyat
                   </button>
                 </div>
               )}
