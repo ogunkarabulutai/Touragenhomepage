@@ -5,36 +5,36 @@ import { useLanguage } from '../contexts/LanguageContext';
 const blogPosts = [
   {
     id: 1,
-    title: 'Antalya\'da Görmeniz Gereken 10 Yer',
-    excerpt: 'Akdeniz\'in incisi Antalya\'da tatilинізde mutlaka ziyaret etmeniz gereken tarihi ve doğal güzellikleri keşfedin.',
+    title: 'Antalyada Görməli Olduğunuz 10 Yer',
+    excerpt: 'Aralıq dənizinin incisi Antalyada tətilinizdə mütləq ziyarət etməli olduğunuz tarixi və təbii gözəllikləri kəşf edin.',
     image: 'https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-    author: 'Mehmet Özkan',
-    date: '15 Ağustos 2026',
-    readTime: '8 dakika',
+    author: 'Orxan Əliyev',
+    date: '15 Avqust 2026',
+    readTime: '8 dəqiqə',
     views: 2840,
-    category: 'Tatil Rehberi'
+    category: 'Tətil Bələdçisi'
   },
   {
     id: 2,
-    title: 'Yazın En Güzel Kaçamakları: Ege Kıyıları',
-    excerpt: 'Ege\'nin masmavi sularında kendinizi kaybedin. En güzel koylar, tarihi mekanlar ve lezzet duraklarını sizin için derledik.',
+    title: 'Yayın Ən Gözəl Qaçış Yerləri: Egey Sahilləri',
+    excerpt: 'Egey dənizinin masmavi sularında özünüzü itirin. Ən gözəl körfəzlər, tarixi məkanlar və ləzzət duracaqlarını sizin üçün topladıq.',
     image: 'https://images.pexels.com/photos/1548024/pexels-photo-1548024.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-    author: 'Ayşe Demir',
-    date: '12 Ağustos 2026',
-    readTime: '6 dakika',
+    author: 'Aynur Həsənova',
+    date: '12 Avqust 2026',
+    readTime: '6 dəqiqə',
     views: 1950,
-    category: 'Keşif'
+    category: 'Kəşf'
   },
   {
     id: 3,
-    title: 'Bütçe Dostu Tatil Tavsiyeleri',
-    excerpt: 'Az bütçeyle çok keyif! Cebinizi yakmadan unutulmaz tatil deneyimleri yaşamanın sırlarını paylaşıyoruz.',
+    title: 'Büdcəyə Uyğun Tətil Tövsiyələri',
+    excerpt: 'Az büdcə ilə çox keyf! Cibinizi yandırmadan unudulmaz tətil təcrübələri yaşamağın sirlərini paylaşırıq.',
     image: 'https://images.pexels.com/photos/2161467/pexels-photo-2161467.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop',
-    author: 'Can Yılmaz',
-    date: '10 Ağustos 2026',
-    readTime: '5 dakika',
+    author: 'Elçin Məmmədov',
+    date: '10 Avqust 2026',
+    readTime: '5 dəqiqə',
     views: 3200,
-    category: 'İpuçları'
+    category: 'İpucları'
   }
 ];
 
