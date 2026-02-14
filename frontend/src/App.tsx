@@ -11,6 +11,7 @@ import Reviews from './components/Reviews';
 import Footer from './components/Footer';
 import AuthModal from './components/AuthModal';
 import Services from './components/Services';
+import AboutUs from './components/AboutUs';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
