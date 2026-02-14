@@ -1,7 +1,7 @@
 # TourAgent Customer Panel - PRD
 
 ## Original Problem Statement
-Kullanıcı "Touragent-Customer-Panel-main.zip" dosyasını birebir entegre etmek istedi. Hiçbir değişiklik yapılmadan, orijinal proje olduğu gibi aktarılacaktı.
+Kullanıcı "Touragent-Customer-Panel-main.zip" dosyasını birebir entegre etmek istedi. Sonrasında Azerbaycan dilinde "Haqqımızda" (Hakkımızda) sayfası eklenmesini istedi.
 
 ## Architecture
 - **Frontend**: React 18 + TypeScript + Vite + Tailwind CSS
@@ -16,6 +16,7 @@ Kullanıcı "Touragent-Customer-Panel-main.zip" dosyasını birebir entegre etme
 - Responsive design
 - Sections: Header, Hero with booking form, Flight Deals, Popular Destinations, Featured Hotels, Campaigns, Early Booking, Blog, Reviews, Footer
 - Services page (/services)
+- About Us page (/about) - Azerbaijani content about TourAgent Travel
 - Auth modal (login/register UI)
 
 ## User Personas
@@ -23,21 +24,27 @@ Kullanıcı "Touragent-Customer-Panel-main.zip" dosyasını birebir entegre etme
 - Hotel/flight booking customers
 - Multi-language users (Turkish, English, Azerbaijani)
 
-## What's Been Implemented (2026-02-11)
+## What's Been Implemented
+### 2026-02-11 - Initial Integration
 - Full project integration from uploaded zip file
 - Converted CRA to Vite + TypeScript setup
 - All 14 components integrated as-is
-- LanguageContext with 3 language support
 - React Router with / and /services routes
-- Build + serve approach for Kubernetes compatibility
+
+### 2026-02-11 - About Us Page Added
+- Created AboutUs.tsx component with full Azerbaijani content
+- Added /about route in App.tsx
+- Added "Haqqımızda" navigation link in Header
+- Sections: Hero with stats, company description, 6 service cards (Aviabilet, Turpaketlər, Xarici Turpaketlər, Xüsusi Turlar, Transfer & VIP, Viza Dəstəyi), 7/24 support, CTA
+- All tests passed (iteration_2: 90% success)
 
 ## Prioritized Backlog
 - P0: None (all core features working)
 - P1: Hot reload for development (currently needs rebuild)
-- P2: Language switch content persistence improvements
+- P2: Language switch for About page content (currently AZ only)
 - P3: Dark mode visual refinements
 
 ## Next Tasks
 - Add backend functionality if needed (booking API, user auth)
-- Implement actual search functionality
+- Multi-language support for About page
 - Connect to real hotel/flight data APIs
