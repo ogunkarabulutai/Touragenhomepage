@@ -723,7 +723,7 @@ const translations = {
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>(() => {
     const saved = localStorage.getItem('language');
-    return (saved as Language) || 'tr';
+    return (saved as Language) || 'az';
   });
 
   useEffect(() => {
