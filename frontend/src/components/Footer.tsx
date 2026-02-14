@@ -117,8 +117,8 @@ const Footer: React.FC = () => {
               <div className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-orange-500 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">info@traveleasy.com</p>
-                  <p className="text-sm text-gray-400">Genel Bilgi</p>
+                  <p className="font-medium">info@touragent.az</p>
+                  <p className="text-sm text-gray-400">Ümumi Məlumat</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
