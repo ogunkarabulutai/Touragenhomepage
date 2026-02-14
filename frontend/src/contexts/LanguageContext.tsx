@@ -415,6 +415,7 @@ const translations = {
     'hero.title': 'Azərbaycanın Səyahət Saytı',
     'hero.flight': 'Təyyarə bileti',
     'hero.hotel': 'Otel',
+    'hero.tour': 'Tur',
     'hero.bus': 'Avtobus',
     'hero.carRental': 'Maşın icarəsi',
     'hero.transfer': 'Transfer',
