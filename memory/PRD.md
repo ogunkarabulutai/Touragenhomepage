@@ -1,41 +1,74 @@
-# TourAgent Customer Panel - PRD
+# TourAgent - Seyahat Rezervasyon Platformu
 
-## Original Problem Statement
-Kullanıcı "Touragent-Customer-Panel-main.zip" dosyasını yükledi ve mevcut Emergent platformuna birebir entegre edilmesini istedi. Ardından:
-1. Arama bölümünden Otobüs, Araç Kiralama, Transfer kaldırıldı; Uçak Bileti, Otel, Tur bırakıldı
-2. Nereden/Nereye alanlarına mock şehir dropdown'ları eklendi
-3. "Ucuz bilet bul" butonuna tıklayınca örnek bilet sonuçları gösterildi
-4. Arama sonuçları tasarımı referans görüntüye uygun şekilde yeniden yapılandırıldı
+## Proje Özeti
+Azerbaycan merkezli bir seyahat sitesi. Kullanıcılar uçuş bileti arayabilir, sonuçları görüntüleyebilir ve rezervasyon yapabilir.
 
-## Architecture
-- **Frontend**: Vite + React + TypeScript (port 3000)
-- **Styling**: Tailwind CSS with dark mode
-- **Routing**: React Router DOM v7
-- **i18n**: Custom LanguageContext (TR, EN, AZ)
-- **Backend**: FastAPI (minimal)
-- **Database**: None
+## Teknik Yığın
+- **Frontend:** Vite + React + TypeScript
+- **Styling:** Tailwind CSS
+- **Routing:** react-router-dom
+- **i18n:** Custom context-based (TR, EN, AZ)
+- **Backend:** Yok (Tüm veriler mock)
 
-## What's Been Implemented (Feb 2026)
-- [x] Full project integration (Vite+React+TS)
-- [x] Removed Bus/Car Rental/Transfer tabs, kept Flight/Hotel/Tour
-- [x] Mock city dropdowns for From/To inputs (18 cities with airport codes)
-- [x] Flight search with mock results (8 flights per search)
-- [x] Redesigned search results matching reference image:
-  - Left sidebar: Favoriler, Fiyat Alarmı, Filtreler (Aktarma, Bagaj, Bilet fiyatı, Kalkış/varış, Uçuş süresi, Havayolları, Havalimanları)
-  - Date navigation bar (Önceki gün / Sonraki gün)
-  - Sort tabs: En ucuz, En hızlı, Daha fazla
-  - Column headers: Havayolu, Uçuş Detayı, Kalkış, Fiyat
-  - Flight cards: airline logo, route codes, baggage, stops, times, duration, price TL, Seç button
-  - Direct flight banners, Business Class tags, Detay expand
-- [x] All tests passed (100%)
+## Tamamlanan Özellikler
 
-## Prioritized Backlog
-### P1
-- Connect search to real booking APIs
-- User authentication backend
-- Functional filters (currently UI-only)
+### v1.0 - Temel Uçuş Arama (Şubat 2026)
+- [x] Ana sayfa tasarımı
+- [x] Uçuş arama formu (Nereden/Nereye/Tarih/Yolcu)
+- [x] Mock şehir verileri (18 şehir)
+- [x] Mock uçuş sonuçları
+- [x] Sonuç filtreleme sidebar'ı
+- [x] Sıralama (En ucuz/En hızlı)
 
-### P2
-- Real payment/booking flow
-- Email notifications
-- Blog CMS
+### v1.1 - Checkout Akışı (Şubat 2026)
+- [x] Checkout sayfası (/checkout route)
+- [x] Uçuş özeti gösterimi
+- [x] Yolcu bilgi formu (Ad, Soyad, E-posta, Telefon, Doğum Tarihi, Cinsiyet, Uyruk, Pasaport No)
+- [x] Form validasyonu
+- [x] Fiyat özeti (Bilet ücreti, Vergiler, Hizmet bedeli)
+- [x] Mock ödeme işlemi
+- [x] Başarı ekranı (Rezervasyon no)
+
+### v1.2 - Para Birimi Güncellemesi (Şubat 2026)
+- [x] Tüm fiyatlar TL yerine $ (USD) olarak güncellendi
+
+## Bekleyen Özellikler
+
+### P1 - Yüksek Öncelik
+- [ ] Otel arama işlevselliği
+- [ ] Tur arama işlevselliği
+
+### P2 - Orta Öncelik
+- [ ] Backend API entegrasyonu
+- [ ] Gerçek ödeme entegrasyonu (Stripe)
+- [ ] Kullanıcı kimlik doğrulama
+
+### P3 - Düşük Öncelik
+- [ ] Rezervasyon geçmişi
+- [ ] E-posta bildirimleri
+- [ ] Favorilere ekleme
+
+## Dosya Yapısı
+```
+/app/frontend/
+├── src/
+│   ├── components/
+│   │   ├── HeroSection.tsx    # Ana arama ve sonuçlar
+│   │   ├── Header.tsx
+│   │   └── Footer.tsx
+│   ├── pages/
+│   │   └── Checkout.tsx       # Rezervasyon sayfası
+│   ├── contexts/
+│   │   └── LanguageContext.tsx # i18n
+│   └── App.tsx                 # Router
+```
+
+## Mock Veriler
+- Şehirler: 18 şehir (BAK, IST, SAW, AYT, DXB vb.)
+- Havayolları: AZAL, Turkish Airlines, Pegasus, Buta Airways, Qatar Airways, Emirates
+- Uçuş sonuçları: Her aramada 8 rastgele sonuç üretilir
+
+## Notlar
+- Tüm veriler frontend'de hardcoded
+- Ödeme işlemi sadece görsel simülasyon
+- Gerçek rezervasyon kaydedilmiyor
