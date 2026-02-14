@@ -718,10 +718,10 @@ const HeroSection: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { route: 'İzmir - Köln', dates: '9 Aralık - 14 Aralık', type: 'Gidiş - Dönüş', airline: 'Pegasus', originalPrice: '9.625 TL', price: '6.848 TL', discount: '%28', image: 'https://images.pexels.com/photos/1717859/pexels-photo-1717859.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
-              { route: 'Adana - Hannover', dates: '5 Aralık', type: 'Tek yön', airline: 'Pegasus', originalPrice: '3.828 TL', price: '2.718 TL', discount: '%28', image: 'https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
-              { route: 'Antalya - Frankfurt', dates: '26 Kasım - 1 Aralık', type: 'Gidiş - Dönüş', airline: 'Pegasus', originalPrice: '9.736 TL', price: '6.949 TL', discount: '%28', image: 'https://images.pexels.com/photos/1548024/pexels-photo-1548024.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
-              { route: 'Ankara - Brüksel', dates: '4 Aralık', type: 'Tek yön', airline: 'Pegasus', originalPrice: '4.283 TL', price: '3.003 TL', discount: '%29', image: 'https://images.pexels.com/photos/2161467/pexels-photo-2161467.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
+              { route: 'İzmir - Köln', dates: '9 Aralık - 14 Aralık', type: 'Gidiş - Dönüş', airline: 'Pegasus', originalPrice: '$285', price: '$199', discount: '%28', image: 'https://images.pexels.com/photos/1717859/pexels-photo-1717859.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
+              { route: 'Adana - Hannover', dates: '5 Aralık', type: 'Tek yön', airline: 'Pegasus', originalPrice: '$115', price: '$79', discount: '%28', image: 'https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
+              { route: 'Antalya - Frankfurt', dates: '26 Kasım - 1 Aralık', type: 'Gidiş - Dönüş', airline: 'Pegasus', originalPrice: '$289', price: '$205', discount: '%28', image: 'https://images.pexels.com/photos/1548024/pexels-photo-1548024.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
+              { route: 'Ankara - Brüksel', dates: '4 Aralık', type: 'Tek yön', airline: 'Pegasus', originalPrice: '$129', price: '$89', discount: '%29', image: 'https://images.pexels.com/photos/2161467/pexels-photo-2161467.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
             ].map((flight, index) => (
               <div key={index} className="group bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-700">
                 <div className="relative h-48 overflow-hidden">
