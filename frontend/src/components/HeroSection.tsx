@@ -708,20 +708,20 @@ const HeroSection: React.FC = () => {
                 <span className="w-3 h-3 bg-orange-500 rounded-full"></span>
                 <span className="text-sm font-medium text-orange-700 dark:text-orange-300">Yeni İl Fürsətləri</span>
               </div>
-              <button className="text-blue-600 hover:text-blue-700 font-medium">Yurt dışı</button>
-              <button className="text-gray-600 hover:text-gray-700 font-medium">Yurt içi</button>
+              <button className="text-blue-600 hover:text-blue-700 font-medium">Xarici</button>
+              <button className="text-gray-600 hover:text-gray-700 font-medium">Daxili</button>
               <button className="text-blue-600 hover:text-blue-700 font-medium flex items-center space-x-1">
-                <span>Tümünü gör</span><ArrowRight className="w-4 h-4" />
+                <span>Hamısını gör</span><ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { route: 'İzmir - Köln', dates: '9 Aralık - 14 Aralık', type: 'Gidiş - Dönüş', airline: 'Pegasus', originalPrice: '$285', price: '$199', discount: '%28', image: 'https://images.pexels.com/photos/1717859/pexels-photo-1717859.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
-              { route: 'Adana - Hannover', dates: '5 Aralık', type: 'Tek yön', airline: 'Pegasus', originalPrice: '$115', price: '$79', discount: '%28', image: 'https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
-              { route: 'Antalya - Frankfurt', dates: '26 Kasım - 1 Aralık', type: 'Gidiş - Dönüş', airline: 'Pegasus', originalPrice: '$289', price: '$205', discount: '%28', image: 'https://images.pexels.com/photos/1548024/pexels-photo-1548024.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
-              { route: 'Ankara - Brüksel', dates: '4 Aralık', type: 'Tek yön', airline: 'Pegasus', originalPrice: '$129', price: '$89', discount: '%29', image: 'https://images.pexels.com/photos/2161467/pexels-photo-2161467.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
+              { route: 'Bakı - İstanbul', dates: '9 Dekabr - 14 Dekabr', type: 'Gedış - Qayıdış', airline: 'AZAL', originalPrice: '$285', price: '$199', discount: '%28', image: 'https://images.pexels.com/photos/1717859/pexels-photo-1717859.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
+              { route: 'Bakı - Dubai', dates: '5 Dekabr', type: 'Tək istiqamət', airline: 'Emirates', originalPrice: '$115', price: '$79', discount: '%28', image: 'https://images.pexels.com/photos/1134166/pexels-photo-1134166.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
+              { route: 'Bakı - Moskva', dates: '26 Noyabr - 1 Dekabr', type: 'Gedış - Qayıdış', airline: 'AZAL', originalPrice: '$289', price: '$205', discount: '%28', image: 'https://images.pexels.com/photos/1548024/pexels-photo-1548024.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
+              { route: 'Bakı - Antalya', dates: '4 Dekabr', type: 'Tək istiqamət', airline: 'Turkish Airlines', originalPrice: '$129', price: '$89', discount: '%29', image: 'https://images.pexels.com/photos/2161467/pexels-photo-2161467.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop' },
             ].map((flight, index) => (
               <div key={index} className="group bg-white dark:bg-gray-800 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-700">
                 <div className="relative h-48 overflow-hidden">
@@ -733,7 +733,7 @@ const HeroSection: React.FC = () => {
                   <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">{flight.dates}</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">{flight.type}</div>
                   <div className="flex items-center space-x-2 mb-3"><Plane className="w-4 h-4 text-orange-500" /><span className="text-sm font-medium text-gray-900 dark:text-white">{flight.airline}</span></div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">55 dk önce eklendi</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400 mb-2">55 dəq əvvəl əlavə edildi</div>
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-xs text-gray-500 dark:text-gray-400 line-through">{flight.originalPrice}*</div>
@@ -744,7 +744,7 @@ const HeroSection: React.FC = () => {
               </div>
             ))}
           </div>
-          <div className="text-xs text-gray-500 dark:text-gray-400 mt-4">* Son bir ayın ortalama fiyatıdır.</div>
+          <div className="text-xs text-gray-500 dark:text-gray-400 mt-4">* Son bir ayın orta qiymətidir.</div>
         </div>
       </section>
 
