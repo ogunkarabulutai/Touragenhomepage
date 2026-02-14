@@ -55,6 +55,16 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode, onOpenAuth })
               <span className="hidden md:inline">{t('header.services')}</span>
             </Link>
 
+            {/* About Us Button */}
+            <Link 
+              to="/about"
+              data-testid="about-us-link"
+              className="flex items-center space-x-2 p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
+            >
+              <Info className="w-5 h-5" />
+              <span className="hidden md:inline">Haqqımızda</span>
+            </Link>
+
             {/* Help Button */}
             <div className="relative">
               <button
