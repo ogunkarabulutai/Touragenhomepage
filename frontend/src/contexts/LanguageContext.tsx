@@ -27,6 +27,7 @@ const translations = {
     'hero.title': "Azerbaycan'ın Seyahat Sitesi",
     'hero.flight': 'Uçak bileti',
     'hero.hotel': 'Otel',
+    'hero.tour': 'Tur',
     'hero.bus': 'Otobüs',
     'hero.carRental': 'Araç kiralama',
     'hero.transfer': 'Transfer',
