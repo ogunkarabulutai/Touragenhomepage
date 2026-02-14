@@ -461,11 +461,11 @@ const HeroSection: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
               <button className="flex items-center space-x-2 text-sm text-blue-600 hover:text-blue-800 font-medium border border-gray-300 rounded-full px-4 py-2 hover:bg-gray-50 transition-colors">
                 <ChevronLeft className="w-4 h-4" />
-                <span>Önceki gün <strong>{prevDayPrice} TL</strong></span>
+                <span>Önceki gün <strong>${prevDayPrice}</strong></span>
               </button>
               <span className="text-base font-semibold text-gray-800">{currentDate}</span>
               <button className="flex items-center space-x-2 text-sm text-blue-600 hover:text-blue-800 font-medium border border-gray-300 rounded-full px-4 py-2 hover:bg-gray-50 transition-colors">
-                <span>Sonraki gün <strong>{nextDayPrice} TL</strong></span>
+                <span>Sonraki gün <strong>${nextDayPrice}</strong></span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
