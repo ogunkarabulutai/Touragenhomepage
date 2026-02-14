@@ -115,7 +115,7 @@ const generateMockResults = (fromCode: string, toCode: string, departDate: strin
 };
 
 const formatPrice = (price: number): string => {
-  return price.toLocaleString('tr-TR');
+  return price.toLocaleString('en-US');
 };
 
 interface FilterSectionProps {

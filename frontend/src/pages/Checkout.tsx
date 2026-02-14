@@ -118,7 +118,7 @@ const Checkout: React.FC = () => {
   };
 
   const formatPrice = (price: number): string => {
-    return price.toLocaleString('tr-TR');
+    return price.toLocaleString('en-US');
   };
 
   const formatDate = (dateStr: string): string => {
