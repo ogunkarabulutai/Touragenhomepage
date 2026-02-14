@@ -33,9 +33,9 @@ const mockHotels: Hotel[] = [
     stars: 5,
     price: 4200,
     originalPrice: 5600,
-    features: ['Wifi', 'Otopark', 'Restoran', 'Havuz'],
-    description: 'Lüks golf resort ile unutulmaz bir tatil deneyimi',
-    badge: 'En Popüler',
+    features: ['Wifi', 'Parkinq', 'Restoran', 'Hovuz'],
+    description: 'Lüks qolf kurortu ilə unudulmaz tətil təcrübəsi',
+    badge: 'Ən Populyar',
     discount: 25
   },
   {
@@ -48,8 +48,8 @@ const mockHotels: Hotel[] = [
     stars: 5,
     price: 3800,
     originalPrice: 4900,
-    features: ['Wifi', 'Otopark', 'Restoran', 'Havuz'],
-    description: 'Muhteşem saray mimarisi ve lüks hizmet',
+    features: ['Wifi', 'Parkinq', 'Restoran', 'Hovuz'],
+    description: 'Möhtəşəm saray memarlığı və lüks xidmət',
     badge: 'Yeni',
     discount: 22
   },
@@ -63,9 +63,9 @@ const mockHotels: Hotel[] = [
     stars: 5,
     price: 2900,
     originalPrice: 3400,
-    features: ['Wifi', 'Otopark', 'Restoran', 'Havuz'],
-    description: 'Golf ve spa ile mükemmel bir kombinasyon',
-    badge: 'İndirim',
+    features: ['Wifi', 'Parkinq', 'Restoran', 'Hovuz'],
+    description: 'Qolf və spa ilə mükəmməl kombinasiya',
+    badge: 'Endirim',
     discount: 15
   },
   {
@@ -78,9 +78,9 @@ const mockHotels: Hotel[] = [
     stars: 5,
     price: 2400,
     originalPrice: 2800,
-    features: ['Wifi', 'Otopark', 'Restoran', 'Havuz'],
-    description: 'Aile dostu lüks tatil kompleksi',
-    badge: 'Aile Dostu',
+    features: ['Wifi', 'Parkinq', 'Restoran', 'Hovuz'],
+    description: 'Ailəyə uyğun lüks tətil kompleksi',
+    badge: 'Ailəyə Uyğun',
     discount: 14
   },
   {
