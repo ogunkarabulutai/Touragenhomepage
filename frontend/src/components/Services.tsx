@@ -246,11 +246,11 @@ const Services: React.FC = () => {
             Peşəkar komandamız sizə özel səyahət paketləri hazırlamaq üçün buradadır
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:4440387" className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
+            <a href="tel:+994124411262" className="bg-white text-orange-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
               Bizimlə Əlaqə
             </a>
-            <a href="https://wa.me/905551234567" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-200">
-              Bizi Arayın: 444 0 387
+            <a href="https://wa.me/994502424269" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-200">
+              WhatsApp: +994 50 242 42 69
             </a>
           </div>
         </div>
