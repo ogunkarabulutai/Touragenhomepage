@@ -642,7 +642,7 @@ const HeroSection: React.FC = () => {
 
                           {/* Price */}
                           <div className="col-span-2 p-5 text-right">
-                            <div className="text-2xl font-bold text-gray-900">{formatPrice(result.price)} <span className="text-sm font-medium text-gray-500">TL</span></div>
+                            <div className="text-2xl font-bold text-gray-900">${formatPrice(result.price)}</div>
                           </div>
 
                           {/* Select Button */}
