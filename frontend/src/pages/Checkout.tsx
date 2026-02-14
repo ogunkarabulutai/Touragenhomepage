@@ -124,7 +124,7 @@ const Checkout: React.FC = () => {
   const formatDate = (dateStr: string): string => {
     if (!dateStr) return '';
     const date = new Date(dateStr);
-    return date.toLocaleDateString('tr-TR', {
+    return date.toLocaleDateString('az-AZ', {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
