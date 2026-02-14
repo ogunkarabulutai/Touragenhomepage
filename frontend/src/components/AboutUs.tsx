@@ -296,12 +296,87 @@ const AboutUs: React.FC = () => {
             TourAgent Travel – səyahətinizi əsl agentə etibar edin!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:4440387" className="bg-white text-orange-600 hover:bg-gray-100 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
+            <a href="tel:+994124411262" className="bg-white text-orange-600 hover:bg-gray-100 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
               Bizimlə Əlaqə
             </a>
-            <a href="https://wa.me/905551234567" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-200">
+            <a href="https://wa.me/994502424269" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-10 py-4 rounded-full font-semibold text-lg transition-all duration-200">
               WhatsApp ilə Yazın
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Info Section */}
+      <section className="py-20 bg-white dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Əlaqə Məlumatları</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400">Bizimlə istənilən vaxt əlaqə saxlaya bilərsiniz</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Address */}
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-100 dark:border-gray-700 text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                <MapPin className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Ünvan</h3>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Xan Şuşinski 8,<br />Bakı, Azərbaycan
+              </p>
+            </div>
+
+            {/* Email */}
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-100 dark:border-gray-700 text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                <Mail className="w-8 h-8 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">E-poçt</h3>
+              <a href="mailto:info@touragent.az" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 font-medium text-lg">
+                info@touragent.az
+              </a>
+            </div>
+
+            {/* Phone */}
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 border border-gray-100 dark:border-gray-700 text-center hover:shadow-xl transition-shadow duration-300">
+              <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                <Phone className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Telefon</h3>
+              <a href="tel:+994124411262" className="text-blue-600 hover:text-blue-700 dark:text-blue-400 font-medium text-lg block mb-1">
+                +994 12 441 12 62
+              </a>
+            </div>
+          </div>
+
+          {/* WhatsApp Numbers */}
+          <div className="mt-10 bg-green-50 dark:bg-green-900/10 rounded-3xl p-8 border border-green-200 dark:border-green-800">
+            <div className="flex items-center justify-center space-x-3 mb-6">
+              <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center">
+                <MessageCircle className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">WhatsApp Xətlərimiz</h3>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+              {[
+                { number: '+994502424269', display: '+994 50 242 42 69' },
+                { number: '+994502424267', display: '+994 50 242 42 67' },
+                { number: '+994502424268', display: '+994 50 242 42 68' },
+                { number: '+994502424239', display: '+994 50 242 42 39' },
+                { number: '+994502424276', display: '+994 50 242 42 76' },
+              ].map((wp) => (
+                <a
+                  key={wp.number}
+                  href={`https://wa.me/${wp.number.replace(/\+/g, '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-2 bg-white dark:bg-gray-800 hover:bg-green-100 dark:hover:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-xl px-4 py-3 transition-all duration-200 hover:shadow-md group"
+                >
+                  <MessageCircle className="w-4 h-4 text-green-500 group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{wp.display}</span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
