@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Plane, Building, Camera, MapPin, Calendar, Users, ChevronDown, ChevronLeft, ChevronRight, Clock, X, Heart, Bell, Filter, Luggage, CreditCard, Timer, SlidersHorizontal } from 'lucide-react';
 import BookingModal from './BookingModal';
 import DateRangePicker from './DateRangePicker';
