@@ -93,8 +93,8 @@ const mockHotels: Hotel[] = [
     stars: 5,
     price: 3600,
     originalPrice: 4200,
-    features: ['Wifi', 'Otopark', 'Restoran', 'Havuz'],
-    description: 'Ultra lüks all-inclusive deneyimi',
+    features: ['Wifi', 'Parkinq', 'Restoran', 'Hovuz'],
+    description: 'Ultra lüks all-inclusive təcrübəsi',
     badge: 'Premium',
     discount: 14
   },
@@ -108,9 +108,9 @@ const mockHotels: Hotel[] = [
     stars: 5,
     price: 2200,
     originalPrice: 2600,
-    features: ['Wifi', 'Otopark', 'Restoran', 'Havuz'],
-    description: 'Şık tasarım ve konforlu konaklama',
-    badge: 'Değerli',
+    features: ['Wifi', 'Parkinq', 'Restoran', 'Hovuz'],
+    description: 'Şık dizayn və rahat qalma',
+    badge: 'Dəyərli',
     discount: 15
   }
 ];
