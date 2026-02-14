@@ -42,8 +42,8 @@ const Footer: React.FC = () => {
               <span className="text-xl font-bold">TourAgent</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              15 yıldır size en güzel tatil deneyimlerini sunmaktan gurur duyuyoruz. 
-              Hayalinizdeki tatil sadece bir tık uzağında.
+              15 ildir sizə ən gözəl tətil təcrübələrini sunmaqdan qürur duyuruq. 
+              Xəyalınızdakı tətil sadəcə bir klik uzağınızdadır.
             </p>
             <div className="flex space-x-4">
               <button className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors duration-200">
@@ -63,15 +63,15 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Hızlı Bağlantılar</h4>
+            <h4 className="text-lg font-semibold mb-6">Sürətli Bağlantılar</h4>
             <ul className="space-y-3">
               {[
-                'Oteller',
-                'Uçak Bileti', 
-                'Araç Kiralama',
-                'Aktiviteler',
-                'Tur Paketleri',
-                'Son Dakika Fırsatları'
+                'Otellər',
+                'Təyyarə Bileti', 
+                'Maşın İcarəsi',
+                'Aktivitələr',
+                'Tur Paketləri',
+                'Son Dəqiqə Fürsətləri'
               ].map((item) => (
                 <li key={item}>
                   <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors duration-200">
@@ -84,15 +84,15 @@ const Footer: React.FC = () => {
 
           {/* Popular Destinations */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Popüler Destinasyonlar</h4>
+            <h4 className="text-lg font-semibold mb-6">Populyar İstiqamətlər</h4>
             <ul className="space-y-3">
               {[
-                'Antalya Otelleri',
-                'İstanbul Otelleri',
-                'Bodrum Otelleri', 
-                'Kapadokya Otelleri',
-                'Çeşme Otelleri',
-                'Marmaris Otelleri'
+                'Antalya Otelləri',
+                'İstanbul Otelləri',
+                'Bodrum Otelləri', 
+                'Kapadokya Otelləri',
+                'Çeşme Otelləri',
+                'Marmaris Otelləri'
               ].map((item) => (
                 <li key={item}>
                   <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors duration-200">
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">İletişim</h4>
+            <h4 className="text-lg font-semibold mb-6">Əlaqə</h4>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-orange-500 mt-1 flex-shrink-0" />
