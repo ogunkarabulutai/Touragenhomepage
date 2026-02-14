@@ -13,6 +13,7 @@ import AuthModal from './components/AuthModal';
 import Services from './components/Services';
 import AboutUs from './components/AboutUs';
 import Policies from './components/Policies';
+import Checkout from './pages/Checkout';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -54,6 +55,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/policies" element={<Policies />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
           
           <Footer />
