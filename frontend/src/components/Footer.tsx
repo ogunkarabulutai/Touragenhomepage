@@ -141,18 +141,15 @@ const Footer: React.FC = () => {
               © 2026 TourAgent. Tüm hakları saklıdır. &nbsp;|&nbsp; VÖEN: 2007383881
             </div>
             <div className="mt-4 md:mt-0 flex flex-wrap space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-orange-500 transition-colors duration-200">
-                Gizlilik Politikası
-              </a>
-              <a href="#" className="hover:text-orange-500 transition-colors duration-200">
-                Kullanım Koşulları  
-              </a>
-              <a href="#" className="hover:text-orange-500 transition-colors duration-200">
-                KVKK
-              </a>
-              <a href="#" className="hover:text-orange-500 transition-colors duration-200">
-                Çerezler
-              </a>
+              <Link to="/policies" className="hover:text-orange-500 transition-colors duration-200">
+                Geri Qaytarma Siyasəti
+              </Link>
+              <Link to="/policies" onClick={() => setTimeout(() => document.querySelector('[data-testid="policy-tab-privacy"]')?.dispatchEvent(new MouseEvent('click', { bubbles: true })), 100)} className="hover:text-orange-500 transition-colors duration-200">
+                Məxfilik Siyasəti
+              </Link>
+              <Link to="/policies" onClick={() => setTimeout(() => document.querySelector('[data-testid="policy-tab-terms"]')?.dispatchEvent(new MouseEvent('click', { bubbles: true })), 100)} className="hover:text-orange-500 transition-colors duration-200">
+                Şərtlər və Qaydalar
+              </Link>
             </div>
           </div>
         </div>
