@@ -642,7 +642,7 @@ const translations = {
     'footer.contactUs': 'Bizimlə Əlaqə',
     'footer.partnerships': 'İş Ortaqlıqları',
     'footer.affiliates': 'Tərəfdaşlar',
-    'footer.description': 'Türkiyənin ən etibarlı səyahət platforması. Təyyarə bileti, otel rezervasiyası və daha çoxu üçün tək ünvan.',
+    'footer.description': 'Azərbaycanın ən etibarlı səyahət platforması. Təyyarə bileti, otel rezervasiyası və daha çoxu üçün tək ünvan.',
     'footer.allRightsReserved': 'Bütün hüquqlar qorunur.',
     'footer.followUs': 'Bizi İzləyin',
     'footer.newsletter': 'Xüsusi Təkliflərdən Xəbərdar Olun',
