@@ -549,15 +549,15 @@ const HeroSection: React.FC = () => {
                   <div className="flex items-center space-x-1">
                     <button onClick={() => setSortBy('cheapest')} data-testid="sort-cheapest"
                       className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors ${sortBy === 'cheapest' ? 'bg-[#1a3c5e] text-white' : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'}`}>
-                      {sortBy === 'cheapest' && <span className="mr-1">&#10003;</span>}En ucuz
+                      {sortBy === 'cheapest' && <span className="mr-1">&#10003;</span>}Ən ucuz
                     </button>
                     <button onClick={() => setSortBy('fastest')} data-testid="sort-fastest"
                       className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors ${sortBy === 'fastest' ? 'bg-[#1a3c5e] text-white' : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'}`}>
-                      En hızlı
+                      Ən sürətli
                     </button>
                     <button onClick={() => setSortBy('more')}
                       className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors flex items-center space-x-1 ${sortBy === 'more' ? 'bg-[#1a3c5e] text-white' : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'}`}>
-                      <SlidersHorizontal className="w-3.5 h-3.5" /><span>Daha fazla</span>
+                      <SlidersHorizontal className="w-3.5 h-3.5" /><span>Daha çox</span>
                     </button>
                   </div>
                   <button data-testid="close-results" onClick={closeResults} className="p-2 hover:bg-gray-200 rounded-full transition-colors">
@@ -567,10 +567,10 @@ const HeroSection: React.FC = () => {
 
                 {/* Column Headers */}
                 <div className="hidden md:grid grid-cols-12 gap-2 px-5 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">
-                  <div className="col-span-3">Havayolu</div>
-                  <div className="col-span-2">Uçuş Detayı</div>
-                  <div className="col-span-3">Kalkış</div>
-                  <div className="col-span-2 text-right">Fiyat</div>
+                  <div className="col-span-3">Aviaşirkət</div>
+                  <div className="col-span-2">Uçuş Detalı</div>
+                  <div className="col-span-3">Uçuş</div>
+                  <div className="col-span-2 text-right">Qiymət</div>
                   <div className="col-span-2"></div>
                 </div>
 
@@ -583,7 +583,7 @@ const HeroSection: React.FC = () => {
                         <div className="flex items-center">
                           <div className="bg-blue-600 text-white text-xs font-semibold px-4 py-1.5 rounded-t-lg flex items-center space-x-1.5">
                             <Plane className="w-3.5 h-3.5" />
-                            <span>Direkt uçun, zaman kazanın!</span>
+                            <span>Birbaşa uçun, vaxt qazanın!</span>
                           </div>
                           {result.isBusinessClass && (
                             <div className="bg-gray-800 text-white text-xs font-semibold px-3 py-1.5 rounded-t-lg ml-0 flex items-center space-x-1">
@@ -612,7 +612,7 @@ const HeroSection: React.FC = () => {
                               <span> &rsaquo; {result.toCode}</span>
                             </div>
                             <div className={`text-xs font-semibold mt-1 ${result.isDirect ? 'text-green-600' : 'text-red-500'}`}>
-                              {result.isDirect ? 'Direkt Uçuş' : `${result.stops} Aktarma`}
+                              {result.isDirect ? 'Birbaşa Uçuş' : `${result.stops} Ötürmə`}
                             </div>
                           </div>
 
