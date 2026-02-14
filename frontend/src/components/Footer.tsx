@@ -110,8 +110,8 @@ const Footer: React.FC = () => {
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-orange-500 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">+90 212 555 0123</p>
-                  <p className="text-sm text-gray-400">7/24 Müşteri Hizmetleri</p>
+                  <p className="font-medium">+994 12 441 12 62</p>
+                  <p className="text-sm text-gray-400">7/24 Müştəri Xidmətləri</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
