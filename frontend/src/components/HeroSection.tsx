@@ -245,8 +245,8 @@ const HeroSection: React.FC = () => {
   const prevDayPrice = searchResults.length > 0 ? formatPrice(Math.floor(searchResults[0].price * 0.92)) : '0';
   const nextDayPrice = searchResults.length > 0 ? formatPrice(Math.floor(searchResults[0].price * 0.85)) : '0';
   const currentDate = formData.departDate
-    ? new Date(formData.departDate).toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', weekday: 'short' })
-    : '15 Şub 2026, Paz';
+    ? new Date(formData.departDate).toLocaleDateString('az-AZ', { day: 'numeric', month: 'long', year: 'numeric', weekday: 'short' })
+    : '15 Fev 2026, Baz';
 
   return (
     <>
