@@ -422,29 +422,29 @@ const Checkout: React.FC = () => {
                     <p className="font-semibold text-gray-900">{flight.fromCode} → {flight.toCode}</p>
                     <p className="text-sm text-gray-500">{flight.airline}</p>
                   </div>
-                  <p className="font-semibold text-gray-900">{formatPrice(flight.price)} TL</p>
+                  <p className="font-semibold text-gray-900">${formatPrice(flight.price)}</p>
                 </div>
 
                 {/* Price Breakdown */}
                 <div className="space-y-3 mb-4 pb-4 border-b border-gray-100">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-600">{t('checkout.baseFare')}</span>
-                    <span className="text-gray-900">{formatPrice(Math.floor(flight.price * 0.85))} TL</span>
+                    <span className="text-gray-900">${formatPrice(Math.floor(flight.price * 0.85))}</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-600">{t('checkout.taxes')}</span>
-                    <span className="text-gray-900">{formatPrice(Math.floor(flight.price * 0.12))} TL</span>
+                    <span className="text-gray-900">${formatPrice(Math.floor(flight.price * 0.12))}</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-600">{t('checkout.serviceFee')}</span>
-                    <span className="text-gray-900">{formatPrice(Math.floor(flight.price * 0.03))} TL</span>
+                    <span className="text-gray-900">${formatPrice(Math.floor(flight.price * 0.03))}</span>
                   </div>
                 </div>
 
                 {/* Total */}
                 <div className="flex items-center justify-between mb-6">
                   <span className="text-lg font-bold text-gray-900">{t('checkout.total')}</span>
-                  <span className="text-2xl font-bold text-green-600">{formatPrice(flight.price)} TL</span>
+                  <span className="text-2xl font-bold text-green-600">${formatPrice(flight.price)}</span>
                 </div>
 
                 {/* Payment Button */}
