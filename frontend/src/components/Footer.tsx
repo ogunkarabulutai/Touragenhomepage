@@ -124,8 +124,8 @@ const Footer: React.FC = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-orange-500 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-medium">İstanbul, Türkiye</p>
-                  <p className="text-sm text-gray-400">Merkez Ofis</p>
+                  <p className="font-medium">Bakı, Azərbaycan</p>
+                  <p className="text-sm text-gray-400">Xan Şuşinski 8</p>
                 </div>
               </div>
             </div>
