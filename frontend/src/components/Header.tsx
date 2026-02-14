@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, MapPin, Calendar, Users, Moon, Sun, Menu, X, HelpCircle, User, Phone, MessageCircle, Settings } from 'lucide-react';
+import { Search, MapPin, Calendar, Users, Moon, Sun, Menu, X, HelpCircle, User, Phone, MessageCircle, Settings, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import LanguageSelector from './LanguageSelector';
 import { useLanguage } from '../contexts/LanguageContext';
