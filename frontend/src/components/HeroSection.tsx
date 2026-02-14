@@ -332,7 +332,7 @@ const HeroSection: React.FC = () => {
                             </div>
                           </button>
                         ))}
-                        {filteredFromCities.length === 0 && <div className="px-4 py-6 text-center text-gray-500 text-sm">Sonuç bulunamadı</div>}
+                        {filteredFromCities.length === 0 && <div className="px-4 py-6 text-center text-gray-500 text-sm">Nəticə tapılmadı</div>}
                       </div>
                     )}
                   </div>
@@ -375,7 +375,7 @@ const HeroSection: React.FC = () => {
                             </div>
                           </button>
                         ))}
-                        {filteredToCities.length === 0 && <div className="px-4 py-6 text-center text-gray-500 text-sm">Sonuç bulunamadı</div>}
+                        {filteredToCities.length === 0 && <div className="px-4 py-6 text-center text-gray-500 text-sm">Nəticə tapılmadı</div>}
                       </div>
                     )}
                   </div>
@@ -406,7 +406,7 @@ const HeroSection: React.FC = () => {
                 ) : (
                   <div className="lg:col-span-2">
                     <button onClick={() => setTripType('roundtrip')} className="w-full h-full flex items-center justify-center space-x-2 bg-gray-50 border border-gray-200 rounded-2xl text-gray-600 hover:bg-gray-100 transition-colors duration-200 font-medium">
-                      <span>+</span><span>Dönüş Ekle</span>
+                      <span>+</span><span>Qayıdış əlavə et</span>
                     </button>
                   </div>
                 )}
@@ -417,7 +417,7 @@ const HeroSection: React.FC = () => {
                     <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"><Users className="w-5 h-5" /></div>
                     <select value={formData.passengers} onChange={(e) => handleInputChange('passengers', parseInt(e.target.value))}
                       className="w-full pl-10 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg font-medium appearance-none">
-                      {[1, 2, 3, 4, 5, 6].map(num => (<option key={num} value={num}>{num} Yolcu / Ekonomi</option>))}
+                      {[1, 2, 3, 4, 5, 6].map(num => (<option key={num} value={num}>{num} Sərnişin / Ekonom</option>))}
                     </select>
                     <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"><ChevronDown className="w-5 h-5" /></div>
                   </div>
@@ -428,7 +428,7 @@ const HeroSection: React.FC = () => {
                   <button data-testid="search-button" onClick={handleSearch} disabled={isSearching || !formData.from || !formData.to}
                     className="w-full h-full bg-green-500 hover:bg-green-600 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-2xl font-bold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center px-4">
                     {isSearching ? (
-                      <div className="flex items-center space-x-2"><div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" /><span>Aranıyor...</span></div>
+                      <div className="flex items-center space-x-2"><div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" /><span>Axtarılır...</span></div>
                     ) : (
                       <><span className="lg:inline">{t('hero.findCheapTicket')}</span><ArrowRight className="w-5 h-5 ml-2" /></>
                     )}
