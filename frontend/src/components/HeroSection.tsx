@@ -659,7 +659,7 @@ const HeroSection: React.FC = () => {
                         {/* Detail Toggle + Sponsor */}
                         <div className="flex items-center justify-between px-5 pb-3 pt-0">
                           <button onClick={() => toggleDetail(result.id)} className="text-blue-600 text-xs font-medium hover:underline flex items-center space-x-1">
-                            <span>Detay</span>
+                            <span>Ətraflı</span>
                             <ChevronDown className={`w-3 h-3 transition-transform ${expandedDetails[result.id] ? 'rotate-180' : ''}`} />
                           </button>
                           {result.isSponsored && (
@@ -676,7 +676,7 @@ const HeroSection: React.FC = () => {
                                 <span>{formData.from} ({result.fromCode})</span>
                               </div>
                               <div className="ml-3 pl-4 border-l-2 border-dashed border-gray-300 py-2 text-xs text-gray-500">
-                                Uçuş süresi: {result.duration} &middot; {result.airline} &middot; Bagaj: {result.baggage}
+                                Uçuş müddəti: {result.duration} &middot; {result.airline} &middot; Baqaj: {result.baggage}
                               </div>
                               <div className="flex items-center space-x-4 text-xs text-gray-600">
                                 <span className="font-semibold">{result.arriveTime}</span>
@@ -706,7 +706,7 @@ const HeroSection: React.FC = () => {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2 bg-orange-100 dark:bg-orange-900/20 px-4 py-2 rounded-full">
                 <span className="w-3 h-3 bg-orange-500 rounded-full"></span>
-                <span className="text-sm font-medium text-orange-700 dark:text-orange-300">Yılbaşı Fırsatları</span>
+                <span className="text-sm font-medium text-orange-700 dark:text-orange-300">Yeni İl Fürsətləri</span>
               </div>
               <button className="text-blue-600 hover:text-blue-700 font-medium">Yurt dışı</button>
               <button className="text-gray-600 hover:text-gray-700 font-medium">Yurt içi</button>
