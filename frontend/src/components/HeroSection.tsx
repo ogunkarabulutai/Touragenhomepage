@@ -104,7 +104,7 @@ const generateMockResults = (fromCode: string, toCode: string, departDate: strin
       price: Math.floor(basePrice),
       departDate: departDate || '2026-03-15',
       returnDate: tripType === 'roundtrip' ? (returnDate || '2026-03-22') : undefined,
-      type: tripType === 'roundtrip' ? 'Gidiş - Dönüş' : 'Tek yön',
+      type: tripType === 'roundtrip' ? 'Gedış - Qayıdış' : 'Tək istiqamət',
       isDirect,
       isBusinessClass: i === 1,
       isSponsored: i === 0,
