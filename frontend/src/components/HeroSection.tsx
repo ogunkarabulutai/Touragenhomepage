@@ -461,11 +461,11 @@ const HeroSection: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
               <button className="flex items-center space-x-2 text-sm text-blue-600 hover:text-blue-800 font-medium border border-gray-300 rounded-full px-4 py-2 hover:bg-gray-50 transition-colors">
                 <ChevronLeft className="w-4 h-4" />
-                <span>Önceki gün <strong>${prevDayPrice}</strong></span>
+                <span>Əvvəlki gün <strong>${prevDayPrice}</strong></span>
               </button>
               <span className="text-base font-semibold text-gray-800">{currentDate}</span>
               <button className="flex items-center space-x-2 text-sm text-blue-600 hover:text-blue-800 font-medium border border-gray-300 rounded-full px-4 py-2 hover:bg-gray-50 transition-colors">
-                <span>Sonraki gün <strong>${nextDayPrice}</strong></span>
+                <span>Sonrakı gün <strong>${nextDayPrice}</strong></span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -479,14 +479,14 @@ const HeroSection: React.FC = () => {
                 {/* Favorites */}
                 <button className="w-full flex items-center space-x-2 bg-white border border-gray-200 rounded-lg px-4 py-3 mb-3 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
                   <Heart className="w-4 h-4" />
-                  <span>Aramayı Favorilere Ekle</span>
+                  <span>Axtarışı Favorilərə Əlavə Et</span>
                 </button>
 
                 {/* Price Alert */}
                 <button className="w-full flex items-center justify-between bg-white border-2 border-green-500 rounded-lg px-4 py-3 mb-4 text-sm font-semibold text-green-700 hover:bg-green-50 transition-colors">
                   <div className="flex items-center space-x-2">
                     <Bell className="w-4 h-4" />
-                    <span>Fiyat Alarmı oluştur</span>
+                    <span>Qiymət Siqnalı yarat</span>
                   </div>
                   <ChevronDown className="w-4 h-4" />
                 </button>
@@ -494,25 +494,25 @@ const HeroSection: React.FC = () => {
                 {/* Filters */}
                 <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
                   <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
-                    <span className="font-semibold text-gray-900 text-sm">Filtrele</span>
-                    <button className="text-blue-600 text-xs font-medium hover:underline">Temizle</button>
+                    <span className="font-semibold text-gray-900 text-sm">Filtr</span>
+                    <button className="text-blue-600 text-xs font-medium hover:underline">Təmizlə</button>
                   </div>
 
                   <div className="px-3">
-                    <FilterSection icon={<Filter className="w-4 h-4" />} label="Aktarma" isOpen={!!openFilters.stops} onToggle={() => toggleFilter('stops')}>
+                    <FilterSection icon={<Filter className="w-4 h-4" />} label="Ötürmə" isOpen={!!openFilters.stops} onToggle={() => toggleFilter('stops')}>
                       <div className="space-y-2 pl-7">
-                        <label className="flex items-center space-x-2 text-sm text-gray-600 cursor-pointer"><input type="checkbox" className="rounded border-gray-300 text-blue-600" defaultChecked /><span>Aktarmasız</span></label>
-                        <label className="flex items-center space-x-2 text-sm text-gray-600 cursor-pointer"><input type="checkbox" className="rounded border-gray-300 text-blue-600" defaultChecked /><span>1 Aktarma</span></label>
-                        <label className="flex items-center space-x-2 text-sm text-gray-600 cursor-pointer"><input type="checkbox" className="rounded border-gray-300 text-blue-600" /><span>2+ Aktarma</span></label>
+                        <label className="flex items-center space-x-2 text-sm text-gray-600 cursor-pointer"><input type="checkbox" className="rounded border-gray-300 text-blue-600" defaultChecked /><span>Ötürməsiz</span></label>
+                        <label className="flex items-center space-x-2 text-sm text-gray-600 cursor-pointer"><input type="checkbox" className="rounded border-gray-300 text-blue-600" defaultChecked /><span>1 Ötürmə</span></label>
+                        <label className="flex items-center space-x-2 text-sm text-gray-600 cursor-pointer"><input type="checkbox" className="rounded border-gray-300 text-blue-600" /><span>2+ Ötürmə</span></label>
                       </div>
                     </FilterSection>
 
-                    <FilterSection icon={<Luggage className="w-4 h-4" />} label="Bagaj" isOpen={!!openFilters.baggage} onToggle={() => toggleFilter('baggage')} />
-                    <FilterSection icon={<CreditCard className="w-4 h-4" />} label="Bilet fiyatı" isOpen={!!openFilters.price} onToggle={() => toggleFilter('price')} />
-                    <FilterSection icon={<Clock className="w-4 h-4" />} label="Kalkış / varış saatleri" isOpen={!!openFilters.times} onToggle={() => toggleFilter('times')} />
-                    <FilterSection icon={<Timer className="w-4 h-4" />} label="Uçuş süresi" isOpen={!!openFilters.duration} onToggle={() => toggleFilter('duration')} />
+                    <FilterSection icon={<Luggage className="w-4 h-4" />} label="Baqaj" isOpen={!!openFilters.baggage} onToggle={() => toggleFilter('baggage')} />
+                    <FilterSection icon={<CreditCard className="w-4 h-4" />} label="Bilet qiyməti" isOpen={!!openFilters.price} onToggle={() => toggleFilter('price')} />
+                    <FilterSection icon={<Clock className="w-4 h-4" />} label="Uçuş / eniş saatları" isOpen={!!openFilters.times} onToggle={() => toggleFilter('times')} />
+                    <FilterSection icon={<Timer className="w-4 h-4" />} label="Uçuş müddəti" isOpen={!!openFilters.duration} onToggle={() => toggleFilter('duration')} />
 
-                    <FilterSection icon={<Plane className="w-4 h-4" />} label="Havayolları" isOpen={!!openFilters.airlines} onToggle={() => toggleFilter('airlines')}>
+                    <FilterSection icon={<Plane className="w-4 h-4" />} label="Aviaşirkətlər" isOpen={!!openFilters.airlines} onToggle={() => toggleFilter('airlines')}>
                       <div className="space-y-2 pl-7">
                         {airlineData.map(a => (
                           <label key={a.name} className="flex items-center space-x-2 text-sm text-gray-600 cursor-pointer">
@@ -522,11 +522,11 @@ const HeroSection: React.FC = () => {
                       </div>
                     </FilterSection>
 
-                    <FilterSection icon={<SlidersHorizontal className="w-4 h-4" />} label="Havalimanları" isOpen={!!openFilters.airports} onToggle={() => toggleFilter('airports')}>
+                    <FilterSection icon={<SlidersHorizontal className="w-4 h-4" />} label="Hava limanları" isOpen={!!openFilters.airports} onToggle={() => toggleFilter('airports')}>
                       <div className="space-y-1 pl-7">
                         <div className="flex justify-between text-xs mb-2">
-                          <button className="text-blue-600 hover:underline font-medium">Tümünü seç</button>
-                          <button className="text-gray-400 hover:underline">Hiçbirini seçme</button>
+                          <button className="text-blue-600 hover:underline font-medium">Hamısını seç</button>
+                          <button className="text-gray-400 hover:underline">Heç birini seçmə</button>
                         </div>
                         {[
                           `${formData.from} - ${mockCities.find(c => c.code === formData.fromCode)?.airport?.slice(0, 28) || 'Havalimanı'}`,
