@@ -648,6 +648,7 @@ const HeroSection: React.FC = () => {
                           {/* Select Button */}
                           <div className="col-span-2 p-5 flex items-center justify-center">
                             <button data-testid={`select-flight-${result.id}`}
+                              onClick={() => navigate('/checkout', { state: { flight: result } })}
                               className="bg-green-500 hover:bg-green-600 text-white font-bold text-sm px-6 py-3 rounded-lg transition-all duration-200 hover:shadow-lg flex items-center space-x-1">
                               <span>Seç</span>
                               <ChevronRight className="w-4 h-4" />
