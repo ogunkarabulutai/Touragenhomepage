@@ -221,6 +221,7 @@ const translations = {
     'hero.title': "Azerbaijan's Travel Site",
     'hero.flight': 'Flight ticket',
     'hero.hotel': 'Hotel',
+    'hero.tour': 'Tour',
     'hero.bus': 'Bus',
     'hero.carRental': 'Car rental',
     'hero.transfer': 'Transfer',
