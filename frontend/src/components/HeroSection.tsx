@@ -72,37 +72,15 @@ const HeroSection: React.FC = () => {
                 <span>{t('hero.hotel')}</span>
               </button>
               <button
-                onClick={() => setActiveTab('bus')}
+                onClick={() => setActiveTab('tour')}
                 className={`flex items-center space-x-2 px-6 py-3 font-medium transition-all duration-200 border-b-2 ${
-                  activeTab === 'bus'
+                  activeTab === 'tour'
                     ? 'text-blue-600 border-blue-600'
                     : 'text-gray-600 border-transparent hover:text-blue-600'
                 }`}
               >
-                <Bus className="w-5 h-5" />
-                <span>{t('hero.bus')}</span>
-              </button>
-              <button
-                onClick={() => setActiveTab('car')}
-                className={`flex items-center space-x-2 px-6 py-3 font-medium transition-all duration-200 border-b-2 ${
-                  activeTab === 'car'
-                    ? 'text-blue-600 border-blue-600'
-                    : 'text-gray-600 border-transparent hover:text-blue-600'
-                }`}
-              >
-                <Car className="w-5 h-5" />
-                <span>{t('hero.carRental')}</span>
-              </button>
-              <button
-                onClick={() => setActiveTab('transfer')}
-                className={`flex items-center space-x-2 px-6 py-3 font-medium transition-all duration-200 border-b-2 ${
-                  activeTab === 'transfer'
-                    ? 'text-blue-600 border-blue-600'
-                    : 'text-gray-600 border-transparent hover:text-blue-600'
-                }`}
-              >
-                <MapPin className="w-5 h-5" />
-                <span>{t('hero.transfer')}</span>
+                <Camera className="w-5 h-5" />
+                <span>{t('hero.tour')}</span>
               </button>
             </div>
 
